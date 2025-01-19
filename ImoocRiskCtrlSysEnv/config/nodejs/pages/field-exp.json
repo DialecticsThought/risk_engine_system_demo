@@ -1,0 +1,103 @@
+{
+    "type": "page",
+    "body": [
+        {
+            "type": "form",
+            "title":"",
+            "mode": "inline",
+            "body": [
+                {
+                    "type": "select",
+                    "name": "source",
+                    "label": "场景",
+                    "value": "business",
+                    "options": [
+                      {
+                        "label": "注册登录风险场景",
+                        "value": "signin"
+                      },
+                      {
+                        "label": "营销风险场景",
+                        "value": "business"
+                      },
+                      {
+                        "label": "渠道假量风险场景",
+                        "value": "channel"
+                      },
+                      {
+                        "label": "诈骗导流风险场景",
+                        "value": "diversion"
+                      },
+                      {
+                        "label": "设备风险场景",
+                        "value": "device"
+                      },
+                      {
+                        "label": "交易风险场景",
+                        "value": "pay"
+                      }
+                    ]
+                },
+                {
+                    "type": "divider"
+                },
+                {
+                    "type": "input-text",
+                    "name": "encoding",
+                    "label": "字段编码"
+                },
+                {
+                    "type": "input-text",
+                    "name": "name",
+                    "label": "字段名称"
+                },
+                {
+                    "type": "submit",
+                    "level": "primary",
+                    "label": "查询"
+                }
+            ]
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "table",
+            "title": "表达式字段列表",
+            "columns": [
+              {
+                "name": "datetime",
+                "label": "字段编码"
+              },
+              {
+                "name": "version",
+                "label": "场景"
+              },
+              {
+                "name": "version",
+                "label": "字段名称"
+              },
+              {
+                "name": "version",
+                "label": "字段类型"
+              },
+              {
+                "name": "version",
+                "label": "数据库映射"
+              },
+              {
+                "name": "version",
+                "label": "创建时间"
+              },
+              {
+                "name": "version",
+                "label": "修改时间"
+              },
+              {
+                "name": "version",
+                "label": "操作"
+              }
+            ]
+        }
+    ]
+}

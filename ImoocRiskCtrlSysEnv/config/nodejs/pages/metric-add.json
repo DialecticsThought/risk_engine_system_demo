@@ -1,0 +1,105 @@
+{
+  "type": "page",
+  "body": {
+    "type": "form",
+    "title": "",
+    "mode": "horizontal",
+    "api": "/amis/api/mock2/form/saveForm",
+    "body": [
+      {
+        "type": "input-text",
+        "name": "metric_name",
+        "label": "指标名称",
+        "placeholder": "指标名称",
+        "required": true
+      },
+      {
+        "type": "input-text",
+        "name": "metric_sign",
+        "label": "指标唯一标识",
+        "placeholder": "指标唯一标识",
+        "required": true
+      },
+      {
+        "type": "select",
+        "name": "scene",
+        "label": "风控场景",
+        "required": true,
+        "options": [
+          {
+            "label": "账号场景",
+            "value": "SCEN_ACCOUNT"
+          },
+          {
+            "label": "登录场景",
+            "value": "SCEN_LOGIN  "
+          },
+          {
+            "label": "购物场景",
+            "value": "SCEN_SHOPPING"
+          },
+          {
+            "label": "支付场景",
+            "value": "SCEN_PAY"
+          },
+          {
+            "label": "优惠券场景",
+            "value": "SCEN_COUPON"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "name": "event_type",
+        "label": "行为事件类型",
+        "required": true,
+        "options": [
+          {
+            "label": "登录成功事件",
+            "value": "login_success"
+          },
+          {
+            "label": "登录失败事件",
+            "value": "login_fail"
+          },
+          {
+            "label": "下单事件",
+            "value": "order"
+          },
+          {
+            "label": "支付事件",
+            "value": "pay"
+          },
+          {
+            "label": "用户信息修改事件",
+            "value": "user_profile_modify"
+          },
+          {
+            "label": "优惠券领取事件",
+            "value": "coupons_receive"
+          },
+          {
+            "label": "优惠券使用事件",
+            "value": "coupons_use"
+          },
+          {
+            "label": "发表评论事件",
+            "value": "comment"
+          },
+          {
+            "label": "商品收藏事件",
+            "value": "favorites"
+          },
+          {
+            "label": "浏览事件",
+            "value": "browse"
+          },
+          {
+            "label": "加入购物车事件",
+            "value": "cart_add"
+          }
+        ]
+      }
+    ]
+  }
+}

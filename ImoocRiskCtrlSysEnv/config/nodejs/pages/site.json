@@ -1,0 +1,74 @@
+{
+    "status": 0,
+    "msg": "",
+    "data": {
+      "pages": [
+        {
+          "label": "Home",
+          "url": "/",
+          "redirect": "/rule/single"
+        },
+        {
+          "children": [
+            
+            {
+              "label": "规则管理",
+              "icon": "fa fa-list-alt",
+              "children": [
+                {
+                  "label": "规则新增",
+                  "url": "/rule/single",
+                  "schemaApi": "get:/pages/rule-single.json"
+                },
+                {
+                  "label": "规则组配置",
+                  "url": "/rule/sets",
+                  "schemaApi": "get:/pages/rule-sets.json"
+                
+                }
+              ]
+            },
+            {
+              "label": "指标管理",
+              "icon": "fa fa-clone",
+              "children": [
+                {
+                  "label": "指标新增",
+                  "url": "/metrics/add",
+                  "schemaApi": "get:/pages/metric-add.json"
+                },
+                {
+                  "label": "指标属性配置",
+                  "url": "/metrics/disposition",
+                  "schemaApi": "get:/pages/metric-disp.json"
+                },
+                {
+                  "label": "指标计算配置",
+                  "url": "/metrics/aggregation",
+                  "schemaApi": "get:/pages/metric-agg.json"
+                }
+              ]
+            },
+            {
+              "label": "数据管理",
+              "icon": "fa fa-bar-chart", 
+              "children": [
+                {
+                  "label": "事件类型",
+                  "url": "/list/event_type",
+                  "schemaApi": "get:/pages/event-type.json"
+                },
+                {
+                  "label": "风控场景",
+                  "url": "/list/scene",
+                  "schemaApi": "get:/pages/scene-list.json"
+                }
+                
+              ]
+            }
+            
+          ]
+        }
+      ]
+    }
+  }

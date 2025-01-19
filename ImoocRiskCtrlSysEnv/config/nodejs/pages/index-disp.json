@@ -1,0 +1,148 @@
+{
+  "type": "page",
+  "body": {
+    "type": "form",
+    "title": "",
+    "mode": "horizontal",
+    "api": "/amis/api/mock2/form/saveForm",
+    "body": [
+      {
+        "type": "input-text",
+        "name": "name",
+        "label": "指标名称",
+        "placeholder": "指标名称",
+        "required": true
+      },
+      {
+        "type": "select",
+        "name": "scene",
+        "label": "业务场景",
+        "required": true,
+        "options": [
+          {
+            "label": "下单",
+            "value": "order"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "name": "type",
+        "label": "事件类型",
+        "required": true,
+        "options": [
+          {
+            "label": "下单",
+            "value": "order"
+          }
+        ]
+      },
+
+      {
+        "type": "combo",
+        "name": "combo1",
+        "label": "主维度",
+        "multiple": true,
+        "maxLength": 5,
+        "required": true,
+        "items": [
+          {
+            "type": "tpl",
+            "tpl": "字段 <%= this.index + 1%>.",
+            "className": "p-t-xs",
+            "mode": "inline"
+          },
+          {
+            "name": "left-var",
+            "label": "",
+            "placeholder": "请选择字段",
+            "type": "select",
+            "options": [
+              {
+                "label": "等于 ==",
+                "value": "equal"
+              }
+            ]
+          }
+        ]
+      },
+
+
+      {
+        "type": "combo",
+        "name": "combo1",
+        "label": "从维度",
+        "multiple": true,
+        "maxLength": 5,
+        "required": true,
+        "items": [
+          {
+            "type": "tpl",
+            "tpl": "字段 <%= this.index + 1%>.",
+            "className": "p-t-xs",
+            "mode": "inline"
+          },
+          {
+            "name": "left-var",
+            "label": "",
+            "placeholder": "请选择字段",
+            "type": "select",
+            "options": [
+              {
+                "label": "等于 ==",
+                "value": "equal"
+              }
+            ]
+          }
+        ]
+      },
+      
+      {
+        "type": "select",
+        "name": "compute",
+        "label": "计算方式",
+        "required": true,
+        "options": [
+        ]
+      },
+      {
+        "type": "select",
+        "name": "start-time",
+        "label": "起始时间",
+        "required": true,
+        "options": [
+        ]
+      },
+      {
+        "type": "select",
+        "name": "end-time",
+        "label": "结束时间",
+        "required": true,
+        "options": [
+        ]
+      },
+      {
+        "type": "select",
+        "name": "window",
+        "label": "指标采样窗口",
+        "required": true,
+        "options": [
+          {
+            "label": "秒",
+            "value": "second"
+          },
+          {
+            "label": "分",
+            "value": "minute"
+          }
+        ]
+      },
+      {
+        "type": "input-text",
+        "name": "split",
+        "label": "指标采样时间",
+        "required": true
+      }
+    ]
+  }
+}

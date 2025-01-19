@@ -1,0 +1,100 @@
+{
+  "type": "page",
+  "body": {
+    "type": "form",
+    "title": "",
+    "mode": "horizontal",
+    "api": "/amis/api/mock2/form/saveForm",
+    "body": [
+      
+      {
+        "type": "select",
+        "name": "metric_sign",
+        "label": "指标唯一标识",
+        "placeholder": "指标唯一标识",
+        "required": true,
+        "value": "m_login_seq",
+        "options": [
+          {
+            "label": "登录频率::m_login_seq",
+            "value": "m_login_seq"
+          },
+          {
+            "label": "登录失败频率::m_login_fail_seq",
+            "value": "m_login_fail_seq"
+          },
+          {
+            "label": "下单频率::m_order_seq",
+            "value": "m_order_seq"
+          },
+          {
+            "label": "手机号更改频率::m_phoneNo_edit_seq",
+            "value": "m_phoneNo_edit_seq"
+          }
+        ]
+      },
+
+      {
+        "type": "combo",
+        "name": "combo1",
+        "label": "指标主维度<br />(Redis Key)",
+        "multiple": true,
+        "maxLength": 5,
+        "required": true,
+        "items": [
+          {
+            "type": "tpl",
+            "tpl": "字段 <%= this.index + 1%>.",
+            "className": "p-t-xs",
+            "mode": "inline"
+          },
+          {
+            "name": "left-var",
+            "label": "",
+            "placeholder": "请选择字段",
+            "type": "select",
+            "options": [
+              {
+                "label": "user_id_int",
+                "value": "user_id_int"
+              },
+              {
+                "label": "event_time",
+                "value": "event_time"
+              },
+              {
+                "label": "event_target_name",
+                "value": "event_target_name"
+              },
+              {
+                "label": "event_name",
+                "value": "event_name"
+              },
+              {
+                "label": "event_behavior_name",
+                "value": "event_behavior_name"
+              }
+            ]
+          }
+        ]
+      },
+    
+      {
+        "type": "input-datetime",
+        "name": "start-time",
+        "label": "起始时间",
+        "value": "2023-09-01 04:02:00",
+        "required": true
+        
+      },
+      {
+        "type": "input-datetime",
+        "name": "end-time",
+        "label": "结束时间",
+        "value": "2023-09-30 04:02:00",
+        "required": true
+        
+      }
+    ]
+  }
+}

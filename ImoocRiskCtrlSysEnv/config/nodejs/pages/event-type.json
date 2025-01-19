@@ -1,0 +1,152 @@
+{
+    "type": "page",
+    "body": [
+                      
+      {
+        
+        "type": "crud",
+        "title": "",
+        "data": {
+          "rows" : [
+            {
+              "id": 1,
+              "name": "登录成功事件",
+              "code": "login_success",
+              "type": "LOGIN"
+            },
+            {
+              "id": 2,
+              "name": "登录失败事件",
+              "code": "login_fail",
+              "type": "LOGIN"
+            },
+            {
+              "id": 3,
+              "name": "下单事件",
+              "code": "order",
+              "type": "SHOPPING"
+            },
+            {
+              "id": 4,
+              "name": "支付事件",
+              "code": "pay",
+              "type": "PAY"
+            },
+            {
+              "id": 5,
+              "name": "用户信息修改事件",
+              "code": "user_profile_modify",
+              "type": "ACCOUNT"
+            },
+            {
+              "id": 6,
+              "name": "优惠券领取事件",
+              "code": "coupons_receive",
+              "type": "COUPON"
+            },
+            {
+              "id": 7,
+              "name": "优惠券使用事件",
+              "code": "coupons_use",
+              "type": "COUPON"
+            },
+            {
+              "id": 8,
+              "name": "发表评论事件",
+              "code": "comment",
+              "type": "SHOPPING"
+            },
+            {
+              "id": 9,
+              "name": "商品收藏事件",
+              "code": "favorites",
+              "type": "SHOPPING"
+            },
+            {
+              "id": 10,
+              "name": "浏览事件",
+              "code": "browse",
+              "type": "SHOPPING"
+            },
+            {
+              "id": 11,
+              "name": "加入购物车事件",
+              "code": "cart_add",
+              "type": "SHOPPING"
+            }
+
+          ]
+        },
+        "source": "$rows",
+        "columnsTogglable": false,
+        "rowClassNameExpr": "<%= data.id == 1 ? 'bg-green-100' : '' %>",
+        
+        "columns": [
+          {
+            "name": "id",
+            "label": "序号"
+          },
+          {
+            "name": "name",
+            "label": "事件名称"
+          },
+          {
+            "name": "code",
+            "label": "事件编码"
+          },
+          {
+            "name": "type",
+            "label": "事件类型"
+          },
+          {
+            "type": "operation",
+            "label": "操作",
+            "fixed": "right",
+            "buttons": [
+              {
+                "label": "查看详情",
+                "type": "button",
+                "level": "link",
+                "actionType": "dialog",
+                "dialog": {
+                  "title": "风控场景详情",
+                  "body": {
+                    "type": "form",
+                    "body": [
+                      {
+                        "name": "name",
+                        "label": "事件名称"
+                      },
+                      {
+                        "name": "code",
+                        "label": "事件编码"
+                      },
+                      {
+                        "name": "type",
+                        "label": "事件类型"
+                      }
+                      
+                    ]
+                  }
+                }
+              },
+              {
+                "label": "修改",
+                "type": "button",
+                "level": "link",
+                "className": "text-danger",
+                "disabledOn": "true"
+              },
+              {
+                "label": "删除",
+                "type": "button",
+                "level": "link",
+                "className": "text-danger",
+                "disabledOn": "true"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

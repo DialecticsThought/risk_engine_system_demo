@@ -1,0 +1,95 @@
+{
+  "type": "page",
+  "body": {
+    "type": "form",
+    "title": "",
+    "body": [
+    
+
+    {
+      "type": "grid",
+      "columns": [
+        {
+          "md": 0,
+          "columnClassName": "bg-blue-300",
+          "body": [
+            {
+              "type": "plain",
+              "text": "规则添加"
+            }
+          ]
+        },
+        
+        {
+          "md": 9,
+          "type": "combo",
+          "name": "rs-combo",
+          "label": "单条规则 ( 最多5个 )",
+          "multiple": true,
+          "maxLength": 5,
+          "required": true,
+          "draggable": true,
+          "items": [
+            {
+              "type": "tpl",
+              "tpl": "编号 <%= this.index + 1%>.",
+              "className": "p-t-xs",
+              "mode": "inline"
+            },
+            {
+              "name": "left-var",
+              "label": "规则名称: ",
+              "type": "select",
+              "options": [
+                {
+                  "label": "登录频率::m_login_seq",
+                  "value": "m_login_seq"
+                },
+                {
+                  "label": "登录失败频率::m_login_fail_seq",
+                  "value": "m_login_fail_seq"
+                },
+                {
+                  "label": "下单频率::m_order_seq",
+                  "value": "m_order_seq"
+                },
+                {
+                  "label": "手机号更改频率::m_phoneNo_edit_seq",
+                  "value": "m_phoneNo_edit_seq"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "divider"
+    },
+
+    {
+      "type": "grid",
+      "columns": [
+        {
+          "columnClassName": "bg-blue-300",
+          "body": [
+            {
+              "type": "plain",
+              "text": "规则间逻辑"
+            }
+          ]
+        },
+        {
+          "type": "input-text",
+          "name": "order",
+          "label": "多个规则的执行逻辑 (编号)",
+          "placeholder": "样式: 1&&(2||3)",
+          "required": true
+        },
+        {},{}
+      ]
+    }
+    ]
+  }
+}

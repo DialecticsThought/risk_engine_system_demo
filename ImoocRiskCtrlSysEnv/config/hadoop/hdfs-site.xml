@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:/dfs/name</value>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:/dfs/data</value>
+    </property>
+    <property>
+        <!-- 是否启用文件操作权限, 不启用可以以普通账户写操作HDFS文件和目录 -->
+        <name>dfs.permissions</name>
+        <value>false</value>
+    </property>
+    <property>
+        <!--  设置SecondNameNode节点地址 -->
+        <name>dfs.namenode.secondary.http-address</name>
+        <value>hadoop:50090</value>
+    </property>
+</configuration>

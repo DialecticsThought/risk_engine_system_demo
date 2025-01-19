@@ -1,0 +1,360 @@
+{
+  "type": "page",
+  "body": {
+    "type": "form",
+    "title": "",
+    "mode": "horizontal",
+    "body": [
+      
+      {
+        "type": "select",
+        "name": "metric_sign",
+        "label": "指标唯一标识",
+        "placeholder": "指标唯一标识",
+        "required": true,
+        "value": "m_login_seq",
+        "options": [
+          {
+            "label": "登录频率::m_login_seq",
+            "value": "m_login_seq"
+          },
+          {
+            "label": "登录失败频率::m_login_fail_seq",
+            "value": "m_login_fail_seq"
+          },
+          {
+            "label": "下单频率::m_order_seq",
+            "value": "m_order_seq"
+          },
+          {
+            "label": "手机号更改频率::m_phoneNo_edit_seq",
+            "value": "m_phoneNo_edit_seq"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "name": "parallelism",
+        "label": "Flink并行度(parallelism)",
+        "required": true,
+        "value": "1",
+        "options": [
+          {
+            "label": "1",
+            "value": "1"
+          },
+          {
+            "label": "3",
+            "value": "3"
+          },
+          {
+            "label": "5",
+            "value": "5"
+          },
+          {
+            "label": "10",
+            "value": "10"
+          },
+          {
+            "label": "15",
+            "value": "15"
+          },
+          {
+            "label": "20",
+            "value": "20"
+          },
+          {
+            "label": "30",
+            "value": "30"
+          },
+          {
+            "label": "50",
+            "value": "50"
+          }
+        ]
+      },
+      
+
+      {
+        "type": "combo",
+        "name": "keyby",
+        "label": "Flink分组(KeyBy)",
+        "multiple": true,
+        "maxLength": 5,
+        "required": true,
+        "items": [
+          {
+            "type": "tpl",
+            "tpl": "字段 <%= this.index + 1%>.",
+            "className": "p-t-xs",
+            "mode": "inline"
+          },
+          {
+            "name": "left-var",
+            "label": "",
+            "placeholder": "请选择字段",
+            "type": "select",
+            "options": [
+              {
+                "label": "user_id_int",
+                "value": "user_id_int"
+              },
+              {
+                "label": "event_time",
+                "value": "event_time"
+              },
+              {
+                "label": "event_target_name",
+                "value": "event_target_name"
+              },
+              {
+                "label": "event_name",
+                "value": "event_name"
+              },
+              {
+                "label": "event_behavior_name",
+                "value": "event_behavior_name"
+              }
+            ]
+          }
+        ]
+      },
+
+
+      {
+        "type": "combo",
+        "name": "filter",
+        "label": "Flink筛选 (Filter)",
+        "multiple": true,
+        "maxLength": 5,
+        "required": true,
+        "items": [
+          {
+            "type": "tpl",
+            "tpl": "字段 <%= this.index + 1%>.",
+            "className": "p-t-xs",
+            "mode": "inline"
+          },
+          {
+            "name": "left-var",
+            "label": "",
+            "placeholder": "请选择字段",
+            "type": "select",
+            "options": [
+              {
+                "label": "user_id_int",
+                "value": "user_id_int"
+              },
+              {
+                "label": "event_time",
+                "value": "event_time"
+              },
+              {
+                "label": "event_target_name",
+                "value": "event_target_name"
+              },
+              {
+                "label": "event_name",
+                "value": "event_name"
+              },
+              {
+                "label": "event_behavior_name",
+                "value": "event_behavior_name"
+              }
+            ]
+          }
+        ]
+      },
+     
+      
+      {
+        "type": "select",
+        "name": "window",
+        "label": "Flink窗口类型",
+        "required": true,
+        "value": "sliding",
+        "options": [
+          {
+            "label": "滑动窗口 (Sliding Windows)",
+            "value": "sliding"
+          },
+          {
+            "label": "滚动窗口 (Tumbling Windows)",
+            "value": "tumbling"
+          },
+          {
+            "label": "会话窗口 (Session Windows)",
+            "value": "session"
+          },
+          {
+            "label": "全局窗口 (Global Windows)",
+            "value": "global"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "name": "size",
+        "label": "Flink窗口大小(秒)",
+        "placeholder": "窗口大小(秒)",
+        "required": true,
+        "value": "3600",
+        "options": [
+          {
+            "label": "3600 (1h)",
+            "value": "3600"
+          },
+          {
+            "label": "7200 (2h)",
+            "value": "7200"
+          },
+          {
+            "label": "10800 (3h)",
+            "value": "10800"
+          },
+          {
+            "label": "14400 (4h)",
+            "value": "14400"
+          },
+          {
+            "label": "16800 (5h)",
+            "value": "16800"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "name": "step",
+        "label": "Flink窗口步长(秒)",
+        "placeholder": "窗口步长(秒)",
+        "required": true,
+        "value": "60",
+        "options": [
+          {
+            "label": "60 (1min)",
+            "value": "60"
+          },
+          {
+            "label": "120 (2min)",
+            "value": "120"
+          },
+          {
+            "label": "180 (3min)",
+            "value": "180"
+          },
+          {
+            "label": "240 (4min)",
+            "value": "240"
+          },
+          {
+            "label": "300 (5min)",
+            "value": "300"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "name": "delay",
+        "label": "数据最大延迟(秒)",
+        "required": true,
+        "value": "60",
+        "options": [
+          {
+            "label": "60 (1min)",
+            "value": "60"
+          },
+          {
+            "label": "120 (2min)",
+            "value": "120"
+          },
+          {
+            "label": "180 (3min)",
+            "value": "180"
+          },
+          {
+            "label": "240 (4min)",
+            "value": "240"
+          },
+          {
+            "label": "300 (5min)",
+            "value": "300"
+          }
+        ]
+      },
+      {
+        "type": "combo",
+        "name": "aggregation",
+        "label": "Flink聚合计算(Aggregation)",
+        "multiple": true,
+        "maxLength": 5,
+        "required": true,
+        "items": [
+          {
+            "type": "tpl",
+            "tpl": "字段 <%= this.index + 1%>.",
+            "className": "p-t-xs",
+            "mode": "inline"
+          },
+          {
+            "name": "left-var",
+            "label": "",
+            "placeholder": "请选择字段",
+            "type": "select",
+            "options": [
+              {
+                "label": "user_id_int",
+                "value": "user_id_int"
+              },
+              {
+                "label": "event_time",
+                "value": "event_time"
+              },
+              {
+                "label": "event_target_name",
+                "value": "event_target_name"
+              },
+              {
+                "label": "event_name",
+                "value": "event_name"
+              },
+              {
+                "label": "event_behavior_name",
+                "value": "event_behavior_name"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "name": "operate",
+        "label": "计算方式",
+        "required": true,
+        "value": "count",
+        "options": [
+          {
+            "label": "总和 (sum)",
+            "value": "sum"
+          },
+          {
+            "label": "总数 (count)",
+            "value": "count"
+          },
+          {
+            "label": "平均值 (avg)",
+            "value": "avg"
+          },
+          {
+            "label": "最大值 (max)",
+            "value": "max"
+          },
+          {
+            "label": "最小值 (min)",
+            "value": "min"
+          }
+        ]
+      }
+     
+    ]
+  }
+}

@@ -1,0 +1,194 @@
+{
+    "type": "page",
+    "data": {
+      "row" : [
+        {
+          "group" : "未分组事件组"
+        },
+        {
+          "group" : "登录/退出事件组"
+        },
+        {
+          "group" : "支付事件组"
+        },
+        {
+          "group" : "优惠券事件组"
+        },
+        {
+          "group" : "购物车事件组"
+        },
+        {
+          "group" : "商品浏览事件组"
+        },
+        {
+          "group" : "修改用户信息事件组"
+        },
+        {
+          "group" : "订单事件组"
+        }
+      ]
+    },
+    "aside": [
+      {
+        "type": "form",
+        "title":"",
+        "submitText": "",
+        "body": [    
+          {
+            "name": "text",
+            "type": "input-text",
+            "placeholder": "事件分组搜索"
+          }
+        ]
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "table",
+        "title": "",
+        "columns": [
+          {
+            "name": "group",
+            "label": "全部分组",
+            "fixed": "left"
+          }
+        ],
+        "source": "${row}"
+      }
+    ],
+    "body": [
+      {
+        "type": "form",
+        "title":"",
+        "mode": "inline",
+        "body": [    
+          {
+            "type": "select",
+            "name": "type",
+            "label": "事件类型",
+            "overlay": {
+              "width": "150px",
+              "align": "left"
+            },
+            "options": [
+              {
+                "label": "全部类型",
+                "value": "a"
+              },
+              {
+                "label": "系统预置事件",
+                "value": "a1"
+              },
+              {
+                "label": "运维事件",
+                "value": "a2"
+              },
+              {
+                "label": "自定义事件",
+                "value": "b"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "name": "level",
+            "label": "事件来源",
+            "options": [
+              {
+                "label": "A",
+                "value": "a"
+              },
+              {
+                "label": "B",
+                "value": "b"
+              }
+            ]
+          },
+          {
+            "type": "divider"
+          },
+          {
+            "type": "input-text",
+            "name": "keyword",
+            "label": "事件关键字"
+          },
+          {
+            "type": "submit",
+            "level": "primary",
+            "label": "查询"
+          }
+        ]
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "table",
+        "title": "最近两周事件热力图",
+        "columns": [
+          {
+            "name": "datetime",
+            "label": "时间<br/>(24小时)",
+            "fixed": "left"
+          },
+          {
+            "name": "version",
+            "label": "12-11<br/>(周五)"
+          },
+          {
+            "name": "version",
+            "label": "12-12<br/>(周六)"
+          },
+          {
+            "name": "version",
+            "label": "12-13<br/>(周天)"
+          },
+          {
+            "name": "version",
+            "label": "12-14<br/>(周一)"
+          },
+          {
+            "name": "version",
+            "label": "12-15<br/>(周二)"
+          },
+          {
+            "name": "version",
+            "label": "12-16<br/>(周三)"
+          },
+          {
+            "name": "version",
+            "label": "12-17<br/>(周四)"
+          },
+          {
+            "name": "version",
+            "label": "12-18<br/>(周五)"
+          },
+          {
+            "name": "version",
+            "label": "12-19<br/>(周六)"
+          },
+          {
+            "name": "version",
+            "label": "12-20<br/>(周天)"
+          },
+          {
+            "name": "version",
+            "label": "12-21<br/>(周一)"
+          },
+          {
+            "name": "version",
+            "label": "12-22<br/>(周二)"
+          },
+          {
+            "name": "version",
+            "label": "12-23<br/>(周三)"
+          },
+          {
+            "name": "version",
+            "label": "12-24<br/>(周四)"
+          }
+        ]
+      }
+    ]
+  }

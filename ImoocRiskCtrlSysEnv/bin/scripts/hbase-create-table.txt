@@ -1,0 +1,4 @@
+create 'imooc_test','info'
+put 'imooc_test','imooc-1','info:name','imooc-test-1'
+put 'imooc_test','imooc-2','info:name','imooc-test-2'
+exit

@@ -1508,3 +1508,49 @@ Flink,它要保证系统内部数据状态一致性,
 我不进行Battery对其,可以吗?
 会造成数据的丢失吗?
 大家试试。
+
+
+项目架构图
+![图片描述](./images/img_39.png)
+
+
+```mermaid
+graph LR
+    subgraph Certificates and Keys
+        A1[kube-apiserver.crt] --> A2[kube-apiserver.key]
+        B1[kubelet.crt] --> B2[kubelet.key]
+        C1[etcd.crt] --> C2[etcd.key]
+        D1[ca.crt] --> D2[ca.key]
+        E1[front-proxy-ca.crt] --> E2[front-proxy-ca.key]
+        F1[sa.key] --> F2[sa.pub]
+    end
+    
+    A[kube-apiserver] -- "Uses cert & private key" --> B[kubelet]
+    A -- "Uses cert & private key" --> C[etcd]
+    B -- "Uses cert & private key" --> A
+    C -- "Uses cert & private key" --> A
+    C -- "Uses cert & private key" --> D[kube-controller-manager]
+    C -- "Uses cert & private key" --> E[kube-scheduler]
+    
+    subgraph API Server Communication
+        A --> F1[API Server certs]
+        B --> G[Kubelet certs]
+        C --> H[etcd certs]
+        D --> I[controller manager certs]
+        E --> J[scheduler certs]
+    end
+    
+    A --> D1[ca.crt]
+    B --> D1
+    C --> D1
+    D --> D1
+    E --> D1
+    F1 --> D1
+    
+    A --> E1[front-proxy-ca.crt]
+    B --> E1
+    C --> E1
+    D --> E1
+    E --> E1
+
+```
