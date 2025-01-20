@@ -1,7 +1,0 @@
-# Example usage:
-# Flume JSON Reporting metrics
-agents:
-- name: "flume-agents"
-  enabled: true
-# multiple urls can be separated by ,
-  urls: ["http://flume:36001/metrics"]
